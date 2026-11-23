@@ -1,0 +1,28 @@
+# Coverage: South East Queensland and the Far North Coast of NSW.
+property_types: [apartment, townhouse, house_and_land]
+
+regions:
+  south_east_queensland:
+    state: QLD
+    lgas:
+      - Brisbane
+      - Gold Coast
+      - Sunshine Coast
+      - Moreton Bay
+      - Logan
+      - Ipswich
+      - Redland
+      - Noosa
+      - Scenic Rim
+      - Lockyer Valley
+      - Somerset
+      - Toowoomba
+  far_north_coast_nsw:
+    state: NSW
+    lgas:
+      - Tweed
+      - Byron
+      - Ballina
+      - Lismore
+      - Richmond Valley
+      - Kyogle
