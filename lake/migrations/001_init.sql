@@ -1,5 +1,5 @@
--- Clean zone of the data lake (Cloud SQL for PostgreSQL).
--- Raw files live in GCS; document.storage_path points at them.
+-- Clean zone of the data lake (Amazon RDS for PostgreSQL).
+-- Raw files live in S3; document.storage_path points at them.
 
 CREATE TABLE source (
     id               BIGSERIAL PRIMARY KEY,
@@ -58,7 +58,7 @@ CREATE TABLE document (
     kind         TEXT NOT NULL CHECK (kind IN ('price_list', 'brochure', 'email', 'web_page', 'other')),
     sha256       CHAR(64) NOT NULL UNIQUE,
     media_type   TEXT,
-    storage_path TEXT NOT NULL,   -- gs://bucket/path, internal only, never republished
+    storage_path TEXT NOT NULL,   -- s3://bucket/path, internal only, never republished
     received_at  TIMESTAMPTZ NOT NULL,
     document_date DATE
 );

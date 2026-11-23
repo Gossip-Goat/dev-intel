@@ -7,7 +7,7 @@ Four parts:
 1. **Fetcher and sources** (`src/dev_intel/fetcher`, `sources/`): pulls from licensed feeds and allowlisted sites only, honouring robots.txt, rate limits and site terms.
 2. **Inquiry agent** (`src/dev_intel/inquiry`): emails published sales contacts asking for price lists. Every email names the real sender and says it's market research. A disclosed research firm can be used for hard-to-reach projects. Nothing poses as a buyer.
 3. **Extraction** (`src/dev_intel/extraction`): Claude reads price lists and brochures into typed rows, then plausibility checks send doubtful rows to review.
-4. **Data lake** (`lake/`): raw files in Cloud Storage, clean tables in Postgres, dated price observations, and an asked-vs-settled view.
+4. **Data lake** (`lake/`): raw files in S3, clean tables in Postgres (RDS), hosted in AWS Sydney, dated price observations, and an asked-vs-settled view.
 
 Architecture and compliance decisions: see the design doc linked in the project.
 

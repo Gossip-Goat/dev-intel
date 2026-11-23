@@ -1,14 +1,14 @@
-# Google Cloud layout (planned)
+# AWS layout (planned)
 
-Everything in `australia-southeast1` (Sydney) so data stays in Australia.
+Everything in `ap-southeast-2` (Sydney) so data stays in Australia.
 
 | Piece | Service |
 | --- | --- |
-| Raw zone | Cloud Storage bucket `dev-intel-raw`, versioned, private |
-| Clean zone | Cloud SQL for PostgreSQL, migrations in `lake/migrations` |
-| Jobs (scrape, extract, inquiry sync) | Cloud Run jobs |
-| Schedules | Cloud Scheduler |
-| Secrets (Anthropic key, mailbox credentials) | Secret Manager |
-| Analysis | BigQuery federated queries over Cloud SQL, or Looker Studio |
+| Raw zone | S3 bucket `dev-intel-raw`, versioned, private, Block Public Access on |
+| Clean zone | RDS for PostgreSQL, migrations in `lake/migrations` |
+| Jobs (scrape, extract, inquiry sync) | ECS Fargate scheduled tasks from one container image |
+| Schedules | EventBridge Scheduler |
+| Secrets (Anthropic key, mailbox credentials) | Secrets Manager |
+| Analysis | Athena over S3 exports, or QuickSight on RDS |
 
-Not provisioned yet. Terraform will go here once the project ID is known.
+Not provisioned yet. Terraform will go here once the AWS account is known.

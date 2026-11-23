@@ -54,7 +54,7 @@ class ExtractionSettings(Frozen):
     effort: str
 
 
-class GcpSettings(Frozen):
+class AwsSettings(Frozen):
     region: str
     raw_bucket: str
 
@@ -65,7 +65,7 @@ class Settings(Frozen):
     inquiry: InquirySettings
     fetcher: FetcherSettings
     extraction: ExtractionSettings
-    gcp: GcpSettings
+    aws: AwsSettings
 
 
 class AllowedDomain(Frozen):

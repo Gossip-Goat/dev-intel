@@ -39,6 +39,6 @@ extraction:
   model: "claude-opus-5-5"
   effort: "medium"
 
-gcp:
-  region: "australia-southeast1"   # Sydney, keeps data in Australia
+aws:
+  region: "ap-southeast-2"   # Sydney, keeps data in Australia
   raw_bucket: "dev-intel-raw"
