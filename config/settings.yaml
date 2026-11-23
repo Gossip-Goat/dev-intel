@@ -1,0 +1,44 @@
+# Fixed identity and limits. Code reads these; the model never writes them.
+
+sender:
+  # Option A: a named staff member at your company, stating it's market research.
+  name: "PLACEHOLDER Staff Name"
+  role: "Market Research"
+  company: "PLACEHOLDER Company Pty Ltd"
+  abn: "PLACEHOLDER ABN"
+  email: "placeholder.devintel@gmail.com"   # placeholder; replace with a company mailbox
+  phone: "PLACEHOLDER phone"
+  postal_address: "PLACEHOLDER street address, QLD"
+
+# Option B: a research firm or buyer's agent that discloses it acts for a client.
+# Only used for developments marked hard_to_reach, and only once the firm is engaged.
+research_firm:
+  enabled: false
+  name: "PLACEHOLDER Research Firm"
+  contact_name: "PLACEHOLDER Contact"
+  email: "PLACEHOLDER@research-firm.example"
+  abn: "PLACEHOLDER ABN"
+  postal_address: "PLACEHOLDER address"
+
+inquiry:
+  sending_enabled: false           # stays false until sender details are real
+  approver: "PLACEHOLDER Approver" # every send needs this person's approval in Phase 2
+  require_approval: true
+  max_open_per_development: 1
+  max_sends_per_agency_per_week: 5
+  follow_up_after_days: 7
+  max_follow_ups: 1
+  unsubscribe_honour_business_days: 5
+
+fetcher:
+  user_agent: "dev-intel research bot (contact: placeholder.devintel@gmail.com)"
+  min_seconds_between_requests: 5
+  timeout_seconds: 30
+
+extraction:
+  model: "claude-opus-5-5"
+  effort: "medium"
+
+gcp:
+  region: "australia-southeast1"   # Sydney, keeps data in Australia
+  raw_bucket: "dev-intel-raw"

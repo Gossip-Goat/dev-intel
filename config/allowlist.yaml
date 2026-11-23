@@ -1,0 +1,16 @@
+# Domains the fetcher may request. Add a domain only after checking its robots.txt
+# and terms of use, and record who checked and when.
+
+allowed: []
+# Example entry:
+#  - domain: "example-developer.com.au"
+#    terms_checked_on: "2026-11-30"
+#    checked_by: "name"
+#    notes: "Terms silent on automated access; robots.txt allows /projects/"
+
+# Never fetched directly, whatever robots.txt says. Use licensed feeds instead.
+blocked:
+  - domain: "realestate.com.au"
+    reason: "Terms prohibit scraping. License data through PropTrack."
+  - domain: "www.domain.com.au"
+    reason: "Use the Domain developer API (api.domain.com.au), not the website."
